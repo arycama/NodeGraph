@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-[NodeMenuItem("Relay/ComputeBuffer Output")]
-public partial class ComputeBufferOutputNode : RelayOutputNode<ComputeBuffer>
+namespace NodeGraph
 {
-    [Output] private ComputeBuffer input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/ComputeBuffer Output")]
+    public partial class ComputeBufferOutputNode : RelayOutputNode<ComputeBuffer>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private ComputeBuffer input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }

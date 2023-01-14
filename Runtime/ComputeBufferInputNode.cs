@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-[NodeMenuItem("Relay/ComputeBuffer Input")]
-public partial class ComputeBufferInputNode : RelayInputNode<ComputeBuffer>
+namespace NodeGraph
 {
-    [Input] private ComputeBuffer input;
-
-    public override ComputeBuffer GetValue()
+    [NodeMenuItem("Relay/ComputeBuffer Input")]
+    public partial class ComputeBufferInputNode : RelayInputNode<ComputeBuffer>
     {
-        return input;
+        [Input] private ComputeBuffer input;
+
+        public override ComputeBuffer GetValue()
+        {
+            return input;
+        }
     }
 }

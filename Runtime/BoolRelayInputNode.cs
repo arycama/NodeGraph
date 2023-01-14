@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-[NodeMenuItem("Relay/Bool Input")]
-public partial class BoolRelayInputNode : RelayInputNode<bool>
+namespace NodeGraph
 {
-    [Input] private bool input;
-
-    public override bool GetValue()
+    [NodeMenuItem("Relay/Bool Input")]
+    public partial class BoolRelayInputNode : RelayInputNode<bool>
     {
-        return input;
+        [Input] private bool input;
+
+        public override bool GetValue()
+        {
+            return input;
+        }
     }
 }

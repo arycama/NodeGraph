@@ -1,31 +1,33 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public interface RelayInput
+namespace NodeGraph
 {
-
-}
-
-public interface RelayInput<T> : RelayInput
-{
-    T GetValue();
-}
-
-public abstract class RelayInputNode : BaseNode
-{
-}
-
-public abstract partial class RelayInputNode<T> : RelayInputNode, RelayInput<T>
-{
-    [SerializeField] protected string outputName;
-
-    public override void PreUpdateNodeOrder()
+    public interface RelayInput
     {
-        base.PreUpdateNodeOrder();
 
-        if(!string.IsNullOrEmpty(outputName))
-            Graph.RelayNodes[outputName] = this;
     }
 
-    public abstract T GetValue();
+    public interface RelayInput<T> : RelayInput
+    {
+        T GetValue();
+    }
+
+    public abstract class RelayInputNode : BaseNode
+    {
+    }
+
+    public abstract partial class RelayInputNode<T> : RelayInputNode, RelayInput<T>
+    {
+        [SerializeField] protected string outputName;
+
+        public override void PreUpdateNodeOrder()
+        {
+            base.PreUpdateNodeOrder();
+
+            if (!string.IsNullOrEmpty(outputName))
+                Graph.RelayNodes[outputName] = this;
+        }
+
+        public abstract T GetValue();
+    }
 }

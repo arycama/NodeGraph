@@ -1,11 +1,14 @@
-﻿[NodeMenuItem("Relay/Int Output")]
-public partial class IntRelayOutputNode : RelayOutputNode<int>
+﻿namespace NodeGraph
 {
-    [Output] private int input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/Int Output")]
+    public partial class IntRelayOutputNode : RelayOutputNode<int>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private int input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }

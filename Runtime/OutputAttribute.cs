@@ -1,3 +1,6 @@
 ﻿using System;
 
-public class OutputAttribute : Attribute { }
+namespace NodeGraph
+{
+    public class OutputAttribute : Attribute { }
+}

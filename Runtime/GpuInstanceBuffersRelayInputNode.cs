@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-[NodeMenuItem("Relay/Gpu Instance Buffers Input")]
-public partial class GpuInstanceBuffersRelayInputNode : RelayInputNode<GpuInstanceBuffers>
+namespace NodeGraph
 {
-    [Input] private GpuInstanceBuffers input;
-
-    public override GpuInstanceBuffers GetValue()
+    [NodeMenuItem("Relay/Gpu Instance Buffers Input")]
+    public partial class GpuInstanceBuffersRelayInputNode : RelayInputNode<GpuInstanceBuffers>
     {
-        return input;
+        [Input] private GpuInstanceBuffers input;
+
+        public override GpuInstanceBuffers GetValue()
+        {
+            return input;
+        }
     }
 }

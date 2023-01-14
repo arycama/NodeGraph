@@ -1,11 +1,14 @@
-﻿[NodeMenuItem("Relay/Bool Output")]
-public partial class BoolRelayOutputNode : RelayOutputNode<bool>
+﻿namespace NodeGraph
 {
-    [Output] private bool input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/Bool Output")]
+    public partial class BoolRelayOutputNode : RelayOutputNode<bool>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private bool input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }

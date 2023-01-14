@@ -1,11 +1,14 @@
 ﻿using System;
 
-public class NodeMenuItemAttribute : Attribute
+namespace NodeGraph
 {
-    public string MenuTitle { get; }
-
-    public NodeMenuItemAttribute(string menuTitle = null)
+    public class NodeMenuItemAttribute : Attribute
     {
-        this.MenuTitle = menuTitle;
+        public string MenuTitle { get; }
+
+        public NodeMenuItemAttribute(string menuTitle = null)
+        {
+            this.MenuTitle = menuTitle;
+        }
     }
 }

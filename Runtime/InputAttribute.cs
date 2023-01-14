@@ -1,3 +1,6 @@
 ﻿using System;
 
-public class InputAttribute : Attribute { }
+namespace NodeGraph
+{
+    public class InputAttribute : Attribute { }
+}

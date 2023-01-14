@@ -1,13 +1,16 @@
 ﻿using UnityEngine.Rendering;
 
-[NodeMenuItem("Relay/ShadowSplitData Output")]
-public partial class ShadowSplitDataRelayOutputNode : RelayOutputNode<ShadowSplitData>
+namespace NodeGraph
 {
-    [Output] private ShadowSplitData input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/ShadowSplitData Output")]
+    public partial class ShadowSplitDataRelayOutputNode : RelayOutputNode<ShadowSplitData>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private ShadowSplitData input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }

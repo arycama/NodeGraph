@@ -1,12 +1,14 @@
-﻿[NodeMenuItem("Relay/Float Output")]
-public partial class FloatRelayOutputNode : RelayOutputNode<float>
+﻿namespace NodeGraph
 {
-    [Output] private float input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/Float Output")]
+    public partial class FloatRelayOutputNode : RelayOutputNode<float>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private float input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }
-

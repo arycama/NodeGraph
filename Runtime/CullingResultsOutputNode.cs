@@ -1,13 +1,16 @@
 ﻿using UnityEngine.Rendering;
 
-[NodeMenuItem("Relay/CullingResults Output")]
-public partial class CullingResultsOutputNode : RelayOutputNode<CullingResults>
+namespace NodeGraph
 {
-    [Output] private CullingResults input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/CullingResults Output")]
+    public partial class CullingResultsOutputNode : RelayOutputNode<CullingResults>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private CullingResults input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }

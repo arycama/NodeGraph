@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-[NodeMenuItem("Relay/Float Input")]
-public partial class FloatRelayInputNode : RelayInputNode<float>
+namespace NodeGraph
 {
-    [Input] private float input;
-
-    public override float GetValue()
+    [NodeMenuItem("Relay/Float Input")]
+    public partial class FloatRelayInputNode : RelayInputNode<float>
     {
-        return input;
+        [Input] private float input;
+
+        public override float GetValue()
+        {
+            return input;
+        }
     }
 }

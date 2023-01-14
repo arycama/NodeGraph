@@ -1,33 +1,35 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public struct InstanceRendererData
+namespace NodeGraph
 {
-    public GameObject[] GameObjects { get; private set; }
-    public ComputeBuffer PositionBuffer { get; private set; }
-    public ComputeBuffer InstanceTypeIdBuffer { get; private set; }
-    public int Count { get; set; }
-
-    public InstanceRendererData(ComputeBuffer positionBuffer, ComputeBuffer instanceTypeIdBuffer, GameObject[] gameObjects, int count)
+    public struct InstanceRendererData
     {
-        GameObjects = gameObjects;
-        PositionBuffer = positionBuffer;
-        InstanceTypeIdBuffer = instanceTypeIdBuffer;
-        Count = count;
-    }
+        public GameObject[] GameObjects { get; private set; }
+        public ComputeBuffer PositionBuffer { get; private set; }
+        public ComputeBuffer InstanceTypeIdBuffer { get; private set; }
+        public int Count { get; set; }
 
-    public void Clear()
-    {
-        if(PositionBuffer != null)
+        public InstanceRendererData(ComputeBuffer positionBuffer, ComputeBuffer instanceTypeIdBuffer, GameObject[] gameObjects, int count)
         {
-            PositionBuffer.Release();
-            PositionBuffer = null;
+            GameObjects = gameObjects;
+            PositionBuffer = positionBuffer;
+            InstanceTypeIdBuffer = instanceTypeIdBuffer;
+            Count = count;
         }
 
-        if(InstanceTypeIdBuffer != null)
+        public void Clear()
         {
-            InstanceTypeIdBuffer.Release();
-            InstanceTypeIdBuffer = null;
+            if (PositionBuffer != null)
+            {
+                PositionBuffer.Release();
+                PositionBuffer = null;
+            }
+
+            if (InstanceTypeIdBuffer != null)
+            {
+                InstanceTypeIdBuffer.Release();
+                InstanceTypeIdBuffer = null;
+            }
         }
     }
 }

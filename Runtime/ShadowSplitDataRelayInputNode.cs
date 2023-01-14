@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
 
-[NodeMenuItem("Relay/Shadow Split Input")]
-public partial class ShadowSplitDataRelayInputNode : RelayInputNode<ShadowSplitData>
+namespace NodeGraph
 {
-    [Input] private ShadowSplitData input;
-
-    public override ShadowSplitData GetValue()
+    [NodeMenuItem("Relay/Shadow Split Input")]
+    public partial class ShadowSplitDataRelayInputNode : RelayInputNode<ShadowSplitData>
     {
-        return input;
+        [Input] private ShadowSplitData input;
+
+        public override ShadowSplitData GetValue()
+        {
+            return input;
+        }
     }
 }

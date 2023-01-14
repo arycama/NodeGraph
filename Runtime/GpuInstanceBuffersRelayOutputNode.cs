@@ -1,12 +1,14 @@
-﻿[NodeMenuItem("Relay/Gpu Instance Buffers Output")]
-public partial class GpuInstanceBuffersRelayOutputNode : RelayOutputNode<GpuInstanceBuffers>
+﻿namespace NodeGraph
 {
-    [Output] private GpuInstanceBuffers input;
-
-    public override void OnUpdateValues()
+    [NodeMenuItem("Relay/Gpu Instance Buffers Output")]
+    public partial class GpuInstanceBuffersRelayOutputNode : RelayOutputNode<GpuInstanceBuffers>
     {
-        base.OnUpdateValues();
-        input = Value;
+        [Output] private GpuInstanceBuffers input;
+
+        public override void OnUpdateValues()
+        {
+            base.OnUpdateValues();
+            input = Value;
+        }
     }
 }
-

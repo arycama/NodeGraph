@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
 
-[NodeMenuItem("Relay/RenderTargetIdentifier Input")]
-public partial class RenderTargetIdentifierRelayInputNode : RelayInputNode<RenderTargetIdentifier>
+namespace NodeGraph
 {
-    [Input] private RenderTargetIdentifier input;
-
-    public override RenderTargetIdentifier GetValue()
+    [NodeMenuItem("Relay/RenderTargetIdentifier Input")]
+    public partial class RenderTargetIdentifierRelayInputNode : RelayInputNode<RenderTargetIdentifier>
     {
-        return input;
+        [Input] private RenderTargetIdentifier input;
+
+        public override RenderTargetIdentifier GetValue()
+        {
+            return input;
+        }
     }
 }
