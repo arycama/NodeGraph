@@ -1,0 +1,7 @@
+{
+  "name": "com.arycama.nodegraph",
+  "description": "A node based graph system",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "displayName": "Node Graph"
+}
