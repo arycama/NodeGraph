@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace NodeGraph
 {
@@ -19,7 +20,11 @@ namespace NodeGraph
                 return;
 
             if (Graph.RelayNodes.TryGetValue(inputName, out var node))
-                Value = (node as RelayInput<T>).GetValue();
+            {
+                var typedNode = node as RelayInput<T>;
+                Assert.IsNotNull(typedNode, $"Node {inputName} of type {node.GetType()} was not convertible to type {typeof(T)}");
+                Value = typedNode.GetValue();
+            }
         }
 
         public override bool TryGetAdditionalNode(out BaseNode node)

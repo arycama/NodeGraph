@@ -167,5 +167,11 @@ namespace NodeGraph
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public virtual GpuInstanceBuffers GetValueGpuInstanceBuffers(string fieldName) => throw GetException(fieldName);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public virtual Matrix4x4 GetValueMatrix4x4(string fieldName) => throw GetException(fieldName);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public virtual BuiltinRenderTextureType GetValueBuiltinRenderTextureType(string fieldName) => throw GetException(fieldName);
     }
 }
