@@ -44,6 +44,9 @@ namespace NodeGraph.Editor
             var nodeViewsPerNode = new Dictionary<BaseNode, NodeView>();
             foreach (var node in graph.Nodes)
             {
+                if (node == null)
+                    continue;
+
                 var baseNodeView = new NodeView(this, node);
                 AddElement(baseNodeView);
                 nodeViewsPerNode.Add(node, baseNodeView);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace NodeGraph
 {
@@ -68,12 +69,18 @@ namespace NodeGraph
             // Pre update nodes, for relays
             foreach (var node in nodes)
             {
+                if (node == null)
+                    continue;
+
                 node.Graph = this;
                 node.PreUpdateNodeOrder();
             }
 
             foreach (var node in nodes)
             {
+                if (node == null)
+                    continue;
+
                 UpdateNode(node);
             }
         }
@@ -102,6 +109,19 @@ namespace NodeGraph
 
             return default;
         }
+
+        public bool GetRelayValue<T>(string name, out T value)
+        {
+            if(RelayNodes.TryGetValue(name, out var relayNode))
+            {
+                value = (relayNode as RelayInput<T>).GetValue();
+                return true;
+            }
+
+            value = default;
+            return false;
+        }
+
         private void AddChildNodes(BaseNode node)
         {
             // Additional node.. used for relays. A bit hacky

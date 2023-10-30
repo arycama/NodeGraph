@@ -163,9 +163,6 @@ namespace NodeGraph
         public virtual ShadowDrawingSettings GetValueShadowDrawingSettings(string fieldName) => throw GetException(fieldName);
 
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public virtual Vector4Array GetValueVector4Array(string fieldName) => throw GetException(fieldName);
-
-        [EditorBrowsable(EditorBrowsableState.Never)]
         public virtual GpuInstanceBuffers GetValueGpuInstanceBuffers(string fieldName) => throw GetException(fieldName);
 
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -173,5 +170,11 @@ namespace NodeGraph
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public virtual BuiltinRenderTextureType GetValueBuiltinRenderTextureType(string fieldName) => throw GetException(fieldName);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public virtual Vector3 GetValueVector3(string fieldName) => throw GetException(fieldName);
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public virtual CullingPlanes GetValueCullingPlanes(string fieldName) => throw GetException(fieldName);
     }
 }
