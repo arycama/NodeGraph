@@ -27,6 +27,8 @@ namespace NodeGraph
 
         private SortedList<int, Action> onGraphModified = new();
 
+        public int Version { get; private set; }
+
         public RenderPipelineProprerty GetPipelineProperty(string category, string name)
         {
             foreach (var property in properties)
@@ -56,6 +58,8 @@ namespace NodeGraph
 
         public void SetAsDirty()
         {
+            Version++;
+
             foreach (var action in onGraphModified.Values)
                 action.Invoke();
         }
