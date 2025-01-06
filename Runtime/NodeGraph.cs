@@ -64,7 +64,7 @@ namespace NodeGraph
                 action.Invoke();
         }
 
-        protected void UpdateNodeOrder(List<BaseNode> nodes)
+        protected void UpdateNodeOrder<T>(List<T> nodes) where T : BaseNode
         {
             // Clear processed nodes
             processedNodes.Clear();
